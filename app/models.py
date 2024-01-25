@@ -8,3 +8,10 @@ class Task(db.Model):
     completed = db.Column(db.Boolean, default=False)
     created = db.Column(db.DateTime, default=datetime.utcnow)
     due_date = db.Column(db.Date, nullable=True, default=None)
+
+class User:
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(25), nullable=False)
+    email = db.Column(db.String(25), nullable=False)
+    password = db.Column(db.String(25), nullable=False)
+    created = db.Column(db.DateTime, default=datetime.utcnow)
